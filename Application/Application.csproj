@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.143" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.6.0" />
+    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Doamin\Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Abstractions\Messaging\" />
+    <Folder Include="Abstractions\Clock\" />
+    <Folder Include="Abstractions\Email\" />
+    <Folder Include="Abstractions\Behaviors\" />
+    <Folder Include="Apartments\SearchApartments\" />
+    <Folder Include="Bookings\GetBooking\" />
+    <Folder Include="Bookings\ReserveBooking\" />
+    <Folder Include="Data\" />
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
+
+</Project>
