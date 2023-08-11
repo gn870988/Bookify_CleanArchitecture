@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Bookings\Events\" />
+    <Folder Include="Reviews\Events\" />
     <Folder Include="Users\Events\" />
   </ItemGroup>
 

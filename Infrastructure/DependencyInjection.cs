@@ -8,6 +8,7 @@ using Domain.Bookings;
 using Domain.Users;
 using Infrastructure.Clock;
 using Infrastructure.Data;
+using Infrastructure.Email;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -22,7 +23,7 @@ public static class DependencyInjection
         IConfiguration configuration)
     {
         services.AddTransient<IDateTimeProvider, DateTimeProvider>();
-        services.AddTransient<IEmailService, IEmailService>();
+        services.AddTransient<IEmailService, EmailService>();
 
         AddPersistence(services, configuration);
 
