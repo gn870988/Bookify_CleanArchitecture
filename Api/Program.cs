@@ -20,8 +20,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 
-    //app.ApplyMigrations();
-    //app.SeedData();
+    app.ApplyMigrations();
+    app.SeedData();
 }
 
 app.UseHttpsRedirection();
