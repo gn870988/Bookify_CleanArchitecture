@@ -3,10 +3,10 @@ using Domain.Shared;
 
 namespace Domain.Apartments;
 
-public class Apartment : Entity
+public class Apartment : Entity<ApartmentId>
 {
     public Apartment(
-        Guid id,
+        ApartmentId id,
         Name name,
         Description description,
         Address address,

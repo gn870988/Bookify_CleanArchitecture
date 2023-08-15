@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
 
-public class BookingRepository : Repository<Booking>, IBookingRepository
+public class BookingRepository : Repository<Booking, BookingId>, IBookingRepository
 {
     private static readonly BookingStatus[] ActiveBookingStatuses =
     {

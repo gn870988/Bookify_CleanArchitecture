@@ -38,6 +38,6 @@ public class RegisterUserCommandHandler : ICommandHandler<RegisterUserCommand, G
 
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        return user.Id;
+        return user.Id.Value;
     }
 }

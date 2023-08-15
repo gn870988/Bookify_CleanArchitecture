@@ -1,16 +1,18 @@
 ﻿using Domain.Abstractions;
+using Domain.Apartments;
 using Domain.Bookings;
 using Domain.Reviews.Events;
+using Domain.Users;
 
 namespace Domain.Reviews;
 
-public class Review : Entity
+public class Review : Entity<ReviewId>
 {
     private Review(
-        Guid id,
-        Guid apartmentId,
-        Guid bookingId,
-        Guid userId,
+        ReviewId id,
+        ApartmentId apartmentId,
+        BookingId bookingId,
+        UserId userId,
         Rating rating,
         Comment comment,
         DateTime createdOnUtc)
@@ -28,11 +30,11 @@ public class Review : Entity
     {
     }
 
-    public Guid ApartmentId { get; private set; }
+    public ApartmentId ApartmentId { get; private set; }
 
-    public Guid BookingId { get; private set; }
+    public BookingId BookingId { get; private set; }
 
-    public Guid UserId { get; private set; }
+    public UserId UserId { get; private set; }
 
     public Rating Rating { get; private set; }
 
@@ -52,7 +54,7 @@ public class Review : Entity
         }
 
         var review = new Review(
-            Guid.NewGuid(),
+            ReviewId.New(),
             booking.ApartmentId,
             booking.Id,
             booking.UserId,

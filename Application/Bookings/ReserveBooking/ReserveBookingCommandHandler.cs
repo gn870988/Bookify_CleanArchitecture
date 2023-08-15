@@ -35,14 +35,14 @@ public class ReserveBookingCommandHandler : ICommandHandler<ReserveBookingComman
 
     public async Task<Result<Guid>> Handle(ReserveBookingCommand request, CancellationToken cancellationToken)
     {
-        var user = await _userRepository.GetByIdAsync(request.UserId, cancellationToken);
+        var user = await _userRepository.GetByIdAsync(new UserId(request.UserId), cancellationToken);
 
         if (user is null)
         {
             return Result.Failure<Guid>(UserErrors.NotFound);
         }
 
-        var apartment = await _apartmentRepository.GetByIdAsync(request.ApartmentId, cancellationToken);
+        var apartment = await _apartmentRepository.GetByIdAsync(new ApartmentId(request.ApartmentId), cancellationToken);
 
         if (apartment is null)
         {
@@ -69,7 +69,7 @@ public class ReserveBookingCommandHandler : ICommandHandler<ReserveBookingComman
 
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-            return booking.Id;
+            return booking.Id.Value;
         }
         catch (ConcurrencyException)
         {
