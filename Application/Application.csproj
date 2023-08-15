@@ -22,11 +22,14 @@
     <Folder Include="Abstractions\Clock\" />
     <Folder Include="Abstractions\Email\" />
     <Folder Include="Abstractions\Behaviors\" />
+    <Folder Include="Abstractions\Authentication\" />
     <Folder Include="Apartments\SearchApartments\" />
     <Folder Include="Bookings\GetBooking\" />
     <Folder Include="Bookings\ReserveBooking\" />
     <Folder Include="Data\" />
     <Folder Include="Exceptions\" />
+    <Folder Include="Users\LogInUser\" />
+    <Folder Include="Users\RegisterUser\" />
   </ItemGroup>
 
 </Project>
