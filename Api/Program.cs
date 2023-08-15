@@ -1,3 +1,4 @@
+using Api.Controllers.Bookings;
 using Api.Extensions;
 using Application;
 using Infrastructure;
@@ -19,8 +20,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 
-    app.ApplyMigrations();
-    app.SeedData();
+    //app.ApplyMigrations();
+    //app.SeedData();
 }
 
 app.UseHttpsRedirection();
@@ -30,5 +31,7 @@ app.UseCustomExceptionHandler();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapBookingsEndpoints();
 
 app.Run();

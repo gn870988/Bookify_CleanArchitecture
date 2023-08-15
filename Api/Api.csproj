@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\Apartments\" />
-    <Folder Include="Controllers\Bookings\" />
     <Folder Include="Controllers\Users\" />
     <Folder Include="Extensions\" />
     <Folder Include="Middleware\" />
